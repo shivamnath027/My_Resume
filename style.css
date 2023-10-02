@@ -1,0 +1,41 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(20,20,20);
+}
+.spinner{
+    width: 60px;
+    height: 60px;
+    display: grid;
+    border: 5px solid black;
+    border-radius: 50%;
+    border-color: red black;
+    animation: spinner-animation 5s infinite linear;
+}
+
+.spinner::before,
+.spinner::after{
+    content: "";
+    grid-area: 1/1;
+    margin: 2.2px;
+    border: inherit;
+    border-radius: 50%;
+}
+
+.spinner::before{
+    border-color: white black;
+    animation: inherit;
+    animation-duration: 2.5s;
+    animation-direction: reverse;
+}
+
+.spinner::after{
+    margin: 8.9px;
+}
+@keyframes spinner-animation{
+    100%{
+        transform: rotate(3turn);
+    }
+}
